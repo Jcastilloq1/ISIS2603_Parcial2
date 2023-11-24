@@ -1,0 +1,39 @@
+<main role="main">
+
+
+  <div class="row">
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col mb-2" *ngFor="let receta of recetas">
+              <div class="card p-2" style="width: 15rem; height: 33rem">
+                  <img
+                    class="card-img-top"
+                    src="{{ receta.imagen }}"
+                    alt="{{ receta.nombre }}"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ receta.nombre }}</h5>
+                      <p class="card-text">Calificacion:[{{ receta.estrellas }}]</p>
+                      <p class="card-text">Cantidad de Opiniones: [{{ receta.cantidadOpiniones }}]</p>
+                      <p class="card-text">Duracion: [{{ receta.duracion }}]</p>
+                      <p class="card-text">Dificultad: [{{ receta.dificultad }}]</p>
+                      <p class="card-text">Por: [{{ receta.autorReceta }}]</p>
+                      <a routerLink="/recetas/{{receta.id}}" class="btn btn-sm btn-outline-secondary">Ver más</a>
+                  </div>
+               </div>
+          </div>
+       </div>
+       <div  class="selected-receta rounded" *ngIf="selected">
+        <app-receta-detail [recetaDetail]="selectedReceta"></app-receta-detail>
+      </div>
+    </div>
+  
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>recetas &copy;recetas</p>
+     </div>
+  </footer>
