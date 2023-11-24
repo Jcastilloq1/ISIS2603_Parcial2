@@ -19,7 +19,7 @@
                       <p class="card-text">Duracion: [{{ receta.duracion }}]</p>
                       <p class="card-text">Dificultad: [{{ receta.dificultad }}]</p>
                       <p class="card-text">Por: [{{ receta.autorReceta }}]</p>
-                      <a routerLink="/recetas/{{receta.id}}" class="btn btn-sm btn-outline-secondary">Ver más</a>
+                      <a routerLink="/recetas/{{receta.id}}" class="btn btn-sm btn-outline-secondary" (click)="onSelected(receta)">Ver más</a>
                       
                   </div>
                </div>
